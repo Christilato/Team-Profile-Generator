@@ -1,0 +1,10 @@
+:root {
+    --dark: #e17588;
+}
+
+header {
+    background-color:var(--dark);
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 70px;
+}
