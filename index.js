@@ -9,10 +9,12 @@ const Intern = require("./lib/Intern");
 
 const employees = [];
 
-const questions = [
-    {
+// manager
+const inputManager = [
+    inquirer.prompt ({
+     {
         type: "input",
-        message: "What is the team manager's name?",
+        message: "Who is the team manager?",
         name: "managerName",
     },
     {
@@ -30,27 +32,48 @@ const questions = [
         message: "What is the team manager's office number?",
         name: "managerOfficeNum",
     },
+})];
+
+const inputEmployee [
+    inquirer.prompt ({
     {
         type: "list",
         message: "Which type of team member would you like to add?",
         name: "addMember",
         choices: ["Engineer", "Intern", "I do not want to add any more team members"],
     },
-    
-    // need to loop these questions for Engineer if chosen
-    // need to add question to Intern "School name" if chosen
+    {
+        type: "input",
+        message: "What is the name of the Employee",
+        name: "employeeName",
+    },
+    {
+        type: "input",
+        message: "What is the employee's id?",
+        name: "employeeId",
+    },
+    {
+        type: "input",
+        message: "What is the employee's email?",
+        name: "employeeEmail",
+    },
+    {
+        type: "input",
+        message: "What is the employee's github username?",
+        name: "employeeGithub",
+    },
+    {
+        type: "input",
+        message: "What is the Intern's school?",
+        name: "internSchool",
+    },
 
+}) ;
+   
 ];
 
-function writeToFile (fileName, data) {
-    return fs.writeFileSync(path.join(process.cwd(), fileName), data);
-}
 
-function init() {
-    inquirer.createPromptModule(questions).then((inquirerResponses) => {
-        console.log("generating html");
-        writeToFile("team.html", pageTemplate({...inquirerResponses}));
-    });
-}
 
-init();
+
+
+
