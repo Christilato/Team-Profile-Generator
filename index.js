@@ -18,7 +18,7 @@ console.log("Welcome to the team generator! \n Use `npm run reset` to reset the 
 function generateTeam() {
     function createManager() {
         console.log("Start building your team");
-        inquierer.prompt([
+        inquirer.prompt([
             {
                 type: "input",
                 message: "Who is the team manager?",
@@ -250,9 +250,9 @@ function generateTeam() {
     }
 
     function buildTeam () {
-        if(fs.existsSync(DIST_DIR)) {
-            fs.mkdirSync(DIST_DIR);
-        }
+        // if(fs.existsSync(DIST_DIR)) {
+        //     fs.mkdirSync(DIST_DIR);
+        // }
         fs.writeFileSync(distPath, pageTemplate(employees), "utf-8");
     }
     createManager();

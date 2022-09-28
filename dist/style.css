@@ -1,10 +1,17 @@
 :root {
     --dark: #e17588;
+    --light: pink;
 }
 
-header {
+.jumbotron{
     background-color:var(--dark);
     text-align: center;
     padding: 20px;
     margin-bottom: 70px;
 }
+
+.card-header {
+    background-color: var(--light);
+    text-align: center;
+}
+
